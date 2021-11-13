@@ -2,7 +2,7 @@ import { boot } from 'quasar/wrappers'
 import axios from 'axios'
 
 const serverUrl = process.env.PROD
-  ? 'http://anastasi-target.ru'
+  ? 'https://anastasi-target.ru'
   : 'http://localhost:8080'
 
 const api = axios.create({

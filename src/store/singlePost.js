@@ -71,7 +71,7 @@ export default {
         })
       }
     },
-    updateImageFile({ commit, dispatch, rootGetters }, val) {
+    updateImageFile({ commit, dispatch }, val) {
       return new Promise(async (resolve, reject) => {
         if (!val) {
           commit('updateImageFile', null)
@@ -85,7 +85,7 @@ export default {
         } else {
           // filepath from database
           try {
-            const filepath = rootGetters['config/serverHost'] + val
+            const filepath = serverUrl + val
             if (!val) {
               commit('updateImageFile', null)
               dispatch('updatePreviewFromFilePath', '')

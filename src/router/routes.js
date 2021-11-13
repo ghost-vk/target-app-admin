@@ -26,6 +26,10 @@ const routes = [
         path: '/magnets/edit/:id',
         component: () => import('pages/MainMagnetsEditPage'),
       },
+      {
+        path: '/uploads',
+        component: () => import('pages/MediaLibrary')
+      }
     ],
     meta: {
       requiresAuth: true

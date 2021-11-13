@@ -14,7 +14,14 @@
         <q-toolbar-title> Target App </q-toolbar-title>
 
         <div class="row items-center">
-          <q-btn @click="logout" color="indigo-2" text-color="grey-8" size="sm" class="q-mr-md">Выйти</q-btn>
+          <q-btn
+            @click="logout"
+            color="indigo-2"
+            text-color="grey-8"
+            size="sm"
+            class="q-mr-md"
+            >Выйти</q-btn
+          >
           <a
             class="text-subtitle2 text-white"
             href="https://anastasi-target.ru"
@@ -66,6 +73,19 @@
             </q-item-section>
           </q-item>
         </q-expansion-item>
+        <q-item
+          to="/uploads"
+          clickable
+          v-ripple
+          header-class="text-grey-9"
+          class="text-grey-9"
+        >
+          <q-item-section avatar>
+            <q-icon name="perm_media" />
+          </q-item-section>
+
+          <q-item-section> Медиатека </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
@@ -83,8 +103,8 @@ export default defineComponent({
   name: 'MainLayout',
   methods: {
     ...mapActions({
-      logout: 'auth/logout'
-    })
+      logout: 'auth/logout',
+    }),
   },
   setup() {
     const leftDrawerOpen = ref(false)
