@@ -140,8 +140,7 @@ export default {
     }),
   },
   mounted() {
-    this.loadPosts()
+    this.loadPosts(100)
   },
-  // $router.push(`/blog/posts/edit/${selected[0].id}`)
 }
 </script>
