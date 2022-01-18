@@ -65,6 +65,7 @@
 import MainReviewsPopup from 'components/MainReviewsPopup'
 import { ref } from 'vue'
 import { mapActions, mapGetters } from 'vuex'
+import { serverUrl } from 'boot/axios'
 
 const cutTail = (val) => {
   if (typeof val !== 'string' || val?.length < 24) {
@@ -149,10 +150,9 @@ export default {
       isFormVisible: 'mainReviews/visibility',
       reviews: 'mainReviews/reviews',
       loaders: 'mainReviews/loaders',
-      host: 'config/serverHost',
       currentAction: 'mainReviews/action',
       currentID: 'mainReviews/id'
-    }),
+    })
   },
   mounted() {
     this.getReviews()
@@ -188,8 +188,8 @@ export default {
       this.updateCategory(s.category)
       this.updateLink(s.link)
       this.updateProfession(s.profession)
-      this.updateImage(this.host + s.image)
-      const filePath = s.image ? this.host + s.image : null
+      this.updateImage(serverUrl + s.image)
+      const filePath = s.image ? serverUrl + s.image : null
       this.updateFile(filePath)
       this.updateOrder(s.review_order)
       this.updateContent(s.content)
